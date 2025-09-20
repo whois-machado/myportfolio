@@ -1,0 +1,697 @@
+/* src/Portfolio.module.css */
+
+/* Estilo geral do corpo, correspondente a "bg-gray-950 text-white" no div principal */
+.container {
+  background-color: #030712; /* Cor do bg-gray-950 */
+  color: #ffffff;
+  overflow-x: hidden; /* Para evitar scroll horizontal */
+}
+
+.profilePhotoContainer {
+  /* Para a div mais externa, que tinha a animação e a margem */
+  margin-bottom: 2rem; /* mb-8 */
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.profilePhotoGradient {
+  /* Para a div da borda com gradiente */
+  width: 8rem; /* w-32 */
+  height: 8rem; /* h-32 */
+  margin: auto;
+  border-radius: 9999px; /* rounded-full */
+  background-image: linear-gradient(to right, #3b82f6, #1d4ed8);
+  padding: 0.25rem; /* p-1 */
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); /* shadow-2xl */
+}
+
+.profilePhoto {
+  /* Para o círculo escuro interno */
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background-color: #1f2937; /* bg-gray-800 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileInitials {
+  /* Para o span "JP" */
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: bold;
+  color: #3b82f6; /* text-blue-500 */
+}
+
+/* Estilo do Header */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: rgba(3, 7, 18, 0.9); /* Cor do bg-gray-950 com 90% de opacidade */
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #1f2937; /* Cor do border-gray-800 */
+}
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+
+/* Em Portfolio.module.css */
+.sectionAbout {
+  padding-top: 5rem;    /* py-20 */
+  padding-bottom: 5rem; /* py-20 */
+  background-color: #111827; /* bg-gray-900 */
+}
+
+
+.scrollIndicatorContainer {
+  /* Esta classe cuida apenas do posicionamento */
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scrollIndicatorAnimation {
+  /* Esta classe cuida apenas da animação */
+  animation: pulse-y 2s ease-in-out infinite;
+}
+
+/* Em Portfolio.module.css */
+
+.scrollIcon {
+  width: 1.5rem;  /* Equivalente a 'w-6' */
+  height: 1.5rem; /* Equivalente a 'h-6' */
+  color: #9ca3af; /* Cor equivalente a 'text-gray-400' */
+}
+
+.buttonIcon {
+  width: 1rem;      /* w-4 */
+  height: 1rem;     /* h-4 */
+}
+
+.desktopNav {
+    display: none; /* essa é a parte "hidden".por padrão, ela é escondida*/
+}
+
+.mobileNav {
+    display: block; /* por padrão, ela é visível*/
+}
+
+.desktopNavLinks {
+  display: flex;         /* Equivalente a 'flex' -> Coloca os links em linha */
+  align-items: baseline; /* Equivalente a 'items-baseline' -> Alinha pela base do texto */
+  gap: 2rem;             /* Equivalente a 'space-x-8' -> Espaço ENTRE os links */
+  margin-left: 2.5rem;   /* Equivalente a 'ml-10' -> Espaço à esquerda do conjunto de links */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #3b82f6, #1d4ed8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.logoContainer {
+    flex-shrink: 0;
+}
+
+/* Estilo do botão principal */
+.primaryButton {
+  background-color: #1d4ed8; /* Cor do bg-blue-700 */
+  color: #ffffff;
+  padding: 0.75rem 2rem; /* py-3 px-8 */
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 500; /* font-medium */
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  background-color: #1e40af; /* Cor do hover:bg-blue-800 */
+  transform: scale(1.05);
+}
+
+.secondaryButton {
+  border: 1px solid #3b82f6; /* border-blue-500 */
+  color: #3b82f6; /* text-blue-500 */
+  background-color: transparent;
+  padding: 0.75rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.secondaryButton:hover {
+  background-color: #3b82f6;
+  color: #030712; /* hover:text-gray-950 */
+}
+
+.navButton {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  transition: color 0.2s; /* transition-colors duration-200 */
+  color: #d1d5db; /* text-gray-300 (estado padrão) */
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 0.25rem 0.75rem; /* Adiciona um respiro para a borda */
+  border: 1px solid transparent; 
+  position: relative;
+}
+
+/* REGRA NOVA: Define a aparência da barrinha (escondida por padrão) */
+.navButton::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px; /* Posição um pouco abaixo do texto */
+  height: 2px;
+  background-color: #3b82f6; /* Cor azul */
+  transform: scaleX(0); /* Começa escondida (escala 0) */
+  transition: transform 0.3s ease-in-out;
+}
+
+.navButton:hover {
+  color: #3b82f6; /* hover:text-blue-500 */
+}
+
+.navButton:focus {
+  outline: none; /* Um contorno azul que combina com seu site */
+}
+
+.activeNavButton {
+  color: #3b82f6 !important; /* text-blue-500 (estado ativo) */
+  border-color: transparent;
+}
+
+/* REGRA NOVA: Faz a barrinha aparecer no botão ativo */
+.activeNavButton::after {
+  transform: scaleX(1); /* Fica visível (escala 1) */
+}
+
+.mobileMenuContainer {
+  /* Para a div externa: 'md:hidden border-t border-gray-800' */
+  border-top: 1px solid #1f2937;
+}
+
+.mobileMenuLinks {
+  /* Para a div interna: 'px-2 pt-2 pb-3 space-y-1 bg-gray-950' */
+  padding: 0.5rem 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* Equivalente a space-y-1 */
+  background-color: #030712; /* bg-gray-950 */
+}
+
+.mobileMenuButton {
+  color: #d1d5db; /* text-gray-300 */
+  transition: color 0.2s;
+  background: none; border: none; cursor: pointer;
+}
+.mobileMenuButton:hover {
+  color: white;
+}
+
+.mobileNavButton {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d1d5db;
+  transition: color 0.2s;
+  background: none; border: none; cursor: pointer;
+}
+.mobileNavButton:hover {
+  color: #3b82f6;
+}
+
+.menuIcon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.projectCard {
+  background-color: #1f2937; /* bg-gray-800 */
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+.projectCard:hover {
+  background-color: #374151; /* hover:bg-gray-750 */
+  transform: translateY(-0.5rem);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.projectTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: white;
+  transition: color 0.3s;
+}
+.projectCard:hover .projectTitle {
+  color: #3b82f6; /* A mágica do group-hover acontece aqui */
+}
+
+/* Em Portfolio.module.css */
+.sectionTitleContainer {
+  text-align: center;
+  margin-bottom: 4rem; /* mb-16 */
+}
+
+/* Em Portfolio.module.css */
+.titleUnderline {
+  width: 6rem; /* w-24 */
+  height: 0.25rem; /* h-1 */
+  background-image: linear-gradient(to right, #3b82f6, #1d4ed8);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 9999px;
+}
+
+.navContainer {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.aboutContentGrid {
+  display: grid;
+  gap: 3rem; /* gap-12 */
+  align-items: center;
+}
+
+/* --- Estilos da Seção Portfólio --- */
+
+.sectionPortfolio {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #030712; /* bg-gray-950 */
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem;
+  color: #9ca3af; /* text-gray-400 */
+  max-width: 42rem; /* max-w-2xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projectsGrid {
+  display: grid;
+  gap: 2rem; /* gap-8 */
+}
+
+
+.skillsGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+.skillCard {
+  background-color: #1f2937;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  transition: background-color 0.2s;
+}
+.skillCard:hover {
+  background-color: #374151;
+}
+.skillCardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.skillCardIcon {
+  width: 2rem;
+  height: 2rem;
+  color: #3b82f6;
+  margin-right: 0.75rem;
+}
+.skillCardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.skillCardText {
+  color: #9ca3af;
+}
+
+/* Em Portfolio.module.css */
+.paragraph {
+  font-size: 1.125rem; /* text-lg */
+  color: #d1d5db; /* text-gray-300 */
+  line-height: 1.625; /* leading-relaxed */
+}
+
+/* Em Portfolio.module.css */
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Equivalente a space-y-6 */
+}
+
+/* Em Portfolio.module.css */
+.techTagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* gap-4 */
+  padding-top: 1rem; /* pt-4 */
+}
+
+/* Em Portfolio.module.css */
+.techTag {
+  background-color: #1f2937; /* bg-gray-800 */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  border-radius: 9999px; /* rounded-full */
+}
+
+/* Adicione ao final de Portfolio.module.css */
+
+.projectImagePlaceholder {
+  height: 12rem;
+  background-image: linear-gradient(to bottom right, #374151, #111827);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Estilo para o ícone, incluindo o efeito de hover do card pai (group-hover) */
+.projectImagePlaceholder svg {
+  width: 3rem;
+  height: 3rem;
+  color: #3b82f6;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.projectCard:hover .projectImagePlaceholder svg {
+  opacity: 1;
+}
+
+.projectDescription {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+  line-height: 1.625;
+}
+
+.projectTechTagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.projectTechTag {
+  font-size: 0.75rem;
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.projectActions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto; /* Empurra os botões para a base do card */
+}
+
+.projectButton {
+  flex: 1;
+  border: 1px solid #4b5563;
+  color: #d1d5db;
+  background-color: transparent;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+.projectButton svg {
+  width: 1rem;
+  height: 1rem;
+}
+/* Efeito de hover no botão */
+.projectButton:hover {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+  color: white;
+}
+
+/* Para sm: e lg: adicione media queries se necessário */
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up-delay-1 {
+  animation: fade-in-up 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.heroSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.heroBgGradient {
+  position: absolute;
+  inset: 0; /* atalho para top, right, bottom, left = 0 */
+  background-image: linear-gradient(to bottom right, #111827, #030712, black);
+}
+
+.heroBgRadial {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 30% 30%, rgba(37,99,235,0.1), transparent);
+  opacity: 0.7;
+}
+
+.heroContent {
+  /* Estilos que podemos copiar do .navContainer */
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  /* Estilos adicionais específicos para este container */
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: column; /* Padrão mobile: botões em coluna */
+  gap: 1rem; /* gap-4 */
+  justify-content: center;
+  align-items: center;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem; /* text-xl */
+  color: #d1d5db; /* text-gray-300 */
+  margin-bottom: 2rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.625;
+}
+
+/* Media query para telas maiores (sm:) */
+@media (min-width: 640px) {
+  .heroActions {
+    flex-direction: row; /* Em telas maiores, botões em linha */
+  }
+}
+
+@media (min-width: 768px) {
+  .heroSubtitle {
+    font-size: 1.5rem; /* md:text-2xl */
+  }
+  .sectionTitle {
+    font-size: 2.25rem; /* md:text-4xl */
+  }
+  .desktopNav {
+    display: block; /* esta é a parte "md:block". desktopnav se torna visivel */
+  }
+  .mobileNav {
+    display: none; /* esta é a parte "md:hidden. mobilenav se esconde*/
+  }
+  .projectsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .contactInfoBox {
+    padding: 3rem; /* md:p-12 */
+  }
+  .contactInfoGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* md:grid-cols-3 */
+  }
+}
+
+@media (min-width: 1024px) { /* lg: */
+  .aboutContentGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .projectsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Exemplo de título */
+.mainTitle {
+  font-size: 3.75rem; /* md:text-6xl */
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.highlightText {
+  background-image: linear-gradient(to right, #3b82f6, #1d4ed8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: block;
+}
+
+.highlightTextInline {
+  background-image: linear-gradient(to right, #3b82f6, #1d4ed8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* --- Estilos da Seção Contato --- */
+
+.contactContainer {
+  max-width: 56rem; /* max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+}
+
+.contactInfoBox {
+  background-color: #1f2937; /* bg-gray-800 */
+  border-radius: 1rem; /* rounded-2xl */
+  padding: 2rem; /* p-8 */
+  margin-bottom: 3rem; /* mb-12 */
+}
+
+.contactInfoGrid {
+  display: grid;
+  gap: 2rem; /* gap-8 */
+}
+
+.contactCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem; /* p-6 */
+  background-color: #374151; /* bg-gray-700 */
+  border-radius: 0.75rem; /* rounded-xl */
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.contactCard:hover {
+  background-color: #4b5563; /* hover:bg-gray-600 */
+  transform: translateY(-0.25rem);
+}
+
+.contactCardIconWrapper {
+  width: 4rem; /* w-16 */
+  height: 4rem; /* h-16 */
+  border-radius: 9999px; /* rounded-full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem; /* mb-4 */
+  transition: transform 0.3s;
+}
+.contactCard:hover .contactCardIconWrapper {
+  transform: scale(1.1);
+}
+
+.contactCardIcon {
+  width: 2rem; /* w-8 */
+  height: 2rem; /* h-8 */
+  color: white;
+}
+
+.contactCardTitle {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.5rem; /* mb-2 */
+  color: white;
+}
+
+.contactCardText {
+  font-size: 0.875rem; /* text-sm */
+  color: #9ca3af; /* text-gray-400 */
+}
+
+.centeredContent {
+  text-align: center;
+}
+
+.largePrimaryButton {
+  background-image: linear-gradient(to right, #1d4ed8, #1e40af);
+  color: white;
+  padding: 1rem 2rem; /* px-8 py-4 */
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1), 0 4px 6px -2px rgba(59, 130, 246, 0.05);
+}
+.largePrimaryButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.2), 0 10px 10px -5px rgba(59, 130, 246, 0.1);
+}
+
+/* Adicione ao final de Portfolio.module.css */
+
+/* --- Estilos do Rodapé --- */
+
+.footer {
+  background-color: #030712; /* bg-gray-950 */
+  border-top: 1px solid #1f2937; /* border-gray-800 */
+  padding: 2rem 0; /* py-8 */
+}
+
+.footerText {
+  text-align: center;
+  color: #9ca3af; /* text-gray-400 */
+}
