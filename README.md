@@ -1,4 +1,4 @@
-<img width="1351" height="608" alt="image" src="https://github.com/user-attachments/assets/af896f7b-4f52-4264-a677-e04ffc2cec01" /># 🌐 Meu Portfólio
+# 🌐 Meu Portfólio
 
 Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar meus projetos, habilidades e formas de contato.  
 
