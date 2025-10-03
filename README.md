@@ -1,4 +1,4 @@
-# 🌐 Meu Portfólio
+<img width="1351" height="608" alt="image" src="https://github.com/user-attachments/assets/af896f7b-4f52-4264-a677-e04ffc2cec01" /># 🌐 Meu Portfólio
 
 Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar meus projetos, habilidades e formas de contato.  
 
@@ -21,3 +21,29 @@ Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar m
 
 ## 📂 Estrutura do projeto
 
+src/components/ → componentes reutilizáveis da landing page
+src/pages/ → páginas principais (Home, Projetos, Contato)
+public/ → arquivos estáticos (imagens, favicon, etc.)
+
+---
+
+## 📸 Preview
+
+> *(Adicione aqui uma captura de tela do seu portfólio)*  
+
+Exemplo:  
+![Preview do Portfólio](<img width="1351" height="608" alt="image" src="https://github.com/user-attachments/assets/b1f47d83-62fc-4562-8c04-e4a138303d92" />
+)  
+
+---
+
+## 📬 Contato
+
+Se quiser trocar uma ideia ou saber mais sobre meu trabalho:  
+
+- 💼 [LinkedIn](https://linkedin.com/in/SEU-USUARIO)  
+- 📧 [Email](mailto:SEU-EMAIL)  
+
+---
+
+⭐ Se gostou do projeto, não esqueça de deixar uma **star** no repositório!
