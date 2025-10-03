@@ -1,8 +1,23 @@
-🌐 Meu Portfólio
+# 🌐 Meu Portfólio
 
-Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar meus projetos, habilidades e formas de contato.
-Acesse a versão online aqui 👉 [Meu Portfólio](https://myportfolio-three-silk-76.vercel.app/)
+Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar meus projetos, habilidades e formas de contato.  
 
-## Expanding the ESLint configuration
+👉 Acesse a versão online: [Meu Portfólio](https://SEU-LINK)  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Tecnologias utilizadas
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
+
+- **React + Vite**  
+- **CSS**  
+- **ESLint** (configuração de boas práticas de código)  
+
+---
+
+## 📂 Estrutura do projeto
+
