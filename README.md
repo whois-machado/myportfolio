@@ -27,6 +27,15 @@ public/ → arquivos estáticos (imagens, favicon, etc.)
 
 ---
 
+## 📸 Preview
+
+> *(Adicione aqui uma captura de tela do seu portfólio)*  
+
+Exemplo:  
+![Preview do Portfólio](./public/printscreen.jpg)  
+
+---
+
 ## 📬 Contato
 
 Se quiser trocar uma ideia ou saber mais sobre meu trabalho:  
