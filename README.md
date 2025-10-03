@@ -1,11 +1,7 @@
-# React + CSS
+🌐 Meu Portfólio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar meus projetos, habilidades e formas de contato.
+Acesse a versão online aqui 👉 [Meu Portfólio](https://myportfolio-three-silk-76.vercel.app/)
 
 ## Expanding the ESLint configuration
 
