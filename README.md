@@ -32,8 +32,7 @@ public/ → arquivos estáticos (imagens, favicon, etc.)
 > *(Adicione aqui uma captura de tela do seu portfólio)*  
 
 Exemplo:  
-![Preview do Portfólio](<img width="1351" height="608" alt="image" src="https://github.com/user-attachments/assets/b1f47d83-62fc-4562-8c04-e4a138303d92" />
-)  
+![Preview do Portfólio](.public/printscreen1.jpg)  
 
 ---
 
