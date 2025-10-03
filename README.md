@@ -2,7 +2,7 @@
 
 Este é o repositório do meu portfólio pessoal, desenvolvido para apresentar meus projetos, habilidades e formas de contato.  
 
-👉 Acesse a versão online: [Meu Portfólio](https://SEU-LINK)  
+👉 Acesse a versão online: [Meu Portfólio](https://myportfolio-three-silk-76.vercel.app/) 
 
 ---
 
@@ -27,21 +27,12 @@ public/ → arquivos estáticos (imagens, favicon, etc.)
 
 ---
 
-## 📸 Preview
-
-> *(Adicione aqui uma captura de tela do seu portfólio)*  
-
-Exemplo:  
-![Preview do Portfólio](.public/printscreen1.jpg)  
-
----
-
 ## 📬 Contato
 
 Se quiser trocar uma ideia ou saber mais sobre meu trabalho:  
 
-- 💼 [LinkedIn](https://linkedin.com/in/SEU-USUARIO)  
-- 📧 [Email](mailto:SEU-EMAIL)  
+- 💼 [LinkedIn](https://linkedin.com/in/gabrielmachadodecarvalho)  
+- 📧 [Email](mailto:bielmachado09@hotmail.com)  
 
 ---
 
