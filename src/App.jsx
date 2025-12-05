@@ -270,8 +270,8 @@ export default function App() {
                 tech: ["Solidity", "Web3.js", "Next.js"]
               },
               {
-                title: "IA Chatbot",
-                description: "Chatbot inteligente com processamento de linguagem natural para atendimento ao cliente.",
+                title: "DealFlow AI",
+                description: "Sistema de monitoramento que busca ofertas em Marketplaces e gera links de afiliados automaticamente em planilhas.",
                 tech: ["Python", "TensorFlow", "FastAPI"]
               },
               {
