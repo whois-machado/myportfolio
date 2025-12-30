@@ -9,7 +9,7 @@
 
 .profilePhotoContainer {
   /* Para a div mais externa, que tinha a animação e a margem */
-  margin-bottom: 2rem; /* mb-8 */
+  margin-bottom: 3rem; /* mb-8 */
   animation: fade-in-up 0.8s ease-out forwards;
 }
 
