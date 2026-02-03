@@ -2,6 +2,36 @@ import React, { useState, useEffect } from 'react';
 import { Mail, Github, Linkedin, ChevronDown, Menu, X, Code, Brain, Shield, ExternalLink } from 'lucide-react';
 import styles from './Portfolio.module.css';
 
+const techRow1 = ['JavaScript', 'TypeScript', 'C++', 'React', 'React Native', 'Node.js', 'Next.js', 'Firebase'];
+const techRow2 = ['PyTorch', 'Pandas', 'Scikit-learn', 'Streamlit', 'AWS', 'FastAPI', 'Tailwind'];
+
+function TechStackMarquee() {
+  return (
+    <section className="tech-section">
+      <h2 className="tech-title">Tech Stack</h2>
+
+      <div className="marquee">
+        <div className="marquee__inner marquee__inner--left">
+          {[...techRow1, ...techRow1].map((item, i) => (
+            <div key={item + i} className="marquee__item">
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="marquee marquee--reverse">
+        <div className="marquee__inner marquee__inner--right">
+          {[...techRow2, ...techRow2].map((item, i) => (
+            <div key={item + i} className="marquee__item">
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -242,14 +272,14 @@ export default function App() {
             </h2>
             <div className={styles.titleUnderline}></div>
             <p className={styles.sectionSubtitle}>
-              Alguns dos projetos que desenvolvi, demonstrando minhas habilidades e paixão por tecnologia.
+              Projetos que estou começando a desenvolver, executando minhas habilidades e paixão por tecnologia.
             </p>
           </div>
 
           <div className={styles.projectsGrid}>
             {/* Project Card Template */}
             {[
-              {
+              /*{
                 title: "E-commerce Moderno",
                 description: "Plataforma completa de e-commerce com React, Node.js e payment gateway integrado.",
                 tech: ["React", "Node.js", "MongoDB"]
@@ -258,7 +288,7 @@ export default function App() {
                 title: "Dashboard Analytics",
                 description: "Sistema de análise de dados com visualizações interativas e relatórios em tempo real.",
                 tech: ["Vue.js", "Python", "PostgreSQL"]
-              },
+              }*/,
               {
                 title: "App Mobile",
                 description: "Aplicativo mobile híbrido para gestão de tarefas com sincronização em tempo real.",
@@ -274,11 +304,11 @@ export default function App() {
                 description: "Sistema de monitoramento que busca ofertas em Marketplaces e gera links de afiliados automaticamente em planilhas.",
                 tech: ["Python", "TensorFlow", "FastAPI"]
               },
-              {
+            /*  {
                 title: "Security Scanner",
                 description: "Ferramenta de análise de segurança para identificar vulnerabilidades em aplicações web.",
                 tech: ["Python", "Docker", "React"]
-              }
+              } */
             ].map((project, index) => (
               <div
                 key={index}
@@ -320,6 +350,8 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      <TechStackMarquee />
 
       {/* Contact Section */}
       <section id="contato" className={styles.sectionAbout}>
