@@ -225,21 +225,6 @@ export default function App() {
                 modernas e práticas de desenvolvimento ágil. Busco constantemente aprender e aplicar 
                 novos conhecimentos em projetos reais.
               </p>
-
-              <div className={styles.techTagsContainer}>
-                <div className={styles.techTag}>
-                  <span className={styles.highlightText}>JavaScript</span>
-                </div>
-                <div className={styles.techTag}>
-                  <span className={styles.highlightText}>React</span>
-                </div>
-                <div className={styles.techTag}>
-                  <span className={styles.highlightText}>Node.js</span>
-                </div>
-                <div className={styles.techTag}>
-                  <span className={styles.highlightText}>Python</span>
-                </div>
-              </div>
             </div>
 
             <div className={styles.skillsGrid}>
