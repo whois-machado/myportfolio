@@ -279,7 +279,7 @@ export default function App() {
           <div className={styles.projectsGrid}>
             {/* Project Card Template */}
             {[
-              /*{
+              {
                 title: "E-commerce Moderno",
                 description: "Plataforma completa de e-commerce com React, Node.js e payment gateway integrado.",
                 tech: ["React", "Node.js", "MongoDB"]
@@ -288,7 +288,7 @@ export default function App() {
                 title: "Dashboard Analytics",
                 description: "Sistema de análise de dados com visualizações interativas e relatórios em tempo real.",
                 tech: ["Vue.js", "Python", "PostgreSQL"]
-              }*/,
+              },
               {
                 title: "App Mobile",
                 description: "Aplicativo mobile híbrido para gestão de tarefas com sincronização em tempo real.",
@@ -304,11 +304,11 @@ export default function App() {
                 description: "Sistema de monitoramento que busca ofertas em Marketplaces e gera links de afiliados automaticamente em planilhas.",
                 tech: ["Python", "TensorFlow", "FastAPI"]
               },
-            /*  {
+              {
                 title: "Security Scanner",
                 description: "Ferramenta de análise de segurança para identificar vulnerabilidades em aplicações web.",
                 tech: ["Python", "Docker", "React"]
-              } */
+              } 
             ].map((project, index) => (
               <div
                 key={index}
