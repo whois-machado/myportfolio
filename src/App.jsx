@@ -165,21 +165,27 @@ export default function App() {
           <div className={styles.profilePhotoContainer}>
             <div className={styles.profilePhotoGradient}>
               <div className={styles.profilePhoto}> 
-                <span className={styles.profileInitials}>GM</span>
+                <img
+                src="/ProfilePhoto.jpeg"
+                alt="Gabriel Machado"
+                className={styles.profileImage}
+                />
               </div>
             </div>
         </div>
 
           <div className={styles.fadeInUpDelay1}>
             <h1 className={styles.mainTitle}>
-              Desenvolvedor
+              Software
               <span className={styles.highlightText}>
-                Full Stack
+                Engineer
               </span>
             </h1>
             
             <p className={styles.heroSubtitle}>
-              Estudante de Ciência da Computação, com foco em desenvolvimento de software e interesse em tecnologias emergentes como IA, blockchain e segurança cibernética.
+              <p className={styles.heroSubtitle}>
+                Estudante de Ciência da Computação pela UFRRJ, focado em desenvolver soluções de software para <strong>infraestruturas críticas</strong>. Especialista em unir <strong>IA e IoT</strong> para promover a <strong>segurança e a preservação da vida</strong> em ambientes de risco.
+</p>
             </p>
 
             <div className={styles.heroActions}>
@@ -215,15 +221,15 @@ export default function App() {
           <div className={styles.aboutContentGrid}>
             <div className={styles.textContainer}>
               <p className={styles.paragraph}>
-                Sou graduando em <strong className={styles.highlightText}>Ciência da Computação</strong> pela 
-                Universidade Federal Rural do Rio de Janeiro (UFRRJ), com paixão por desenvolvimento 
-                web e tecnologias emergentes.
+                Sou graduando em <strong className={styles.highlightText}>Ciência da Computação</strong> pela UFRRJ, 
+                com foco em transformar tecnologia em <strong>segurança e preservação da vida</strong>. 
+                Desenvolvo sistemas que unem software de alta performance a infraestruturas críticas.
               </p>
               
               <p className={styles.paragraph}>
-                Tenho experiência em desenvolvimento full stack, com foco especial em tecnologias 
-                modernas e práticas de desenvolvimento ágil. Busco constantemente aprender e aplicar 
-                novos conhecimentos em projetos reais.
+                Atuo na intersecção entre hardware e software, colaborando em equipes multidisciplinares 
+                para criar ferramentas que detectam riscos e previnem acidentes com a rede elétrica em tempo real, 
+                priorizando a <strong>viabilidade técnica e a escalabilidade</strong>.
               </p>
             </div>
 
@@ -231,30 +237,30 @@ export default function App() {
               <div className={styles.skillCard}>
                 <div className={styles.skillCardHeader}>
                   <Code className={styles.skillCardIcon} />
-                  <h3 className={styles.skillCardTitle}>Desenvolvimento Web</h3>
+                  <h3 className={styles.skillCardTitle}>IoT & Monitoramento</h3>
                 </div>
                 <p className={styles.skillCardText}>
-                  Experiência em desenvolvimento full stack com foco em interfaces modernas e APIs robustas.
+                  Criação de dashboards inteligentes e integração de sensores (como DAS) para visualização de dados críticos da rede elétrica em tempo real.
                 </p>
               </div>
 
               <div className={styles.skillCard}>
                 <div className={styles.skillCardHeader}>
                   <Brain className={styles.skillCardIcon} />
-                  <h3 className={styles.skillCardTitle}>Inteligência Artificial</h3>
+                  <h3 className={styles.skillCardTitle}>IA Preventiva</h3>
                 </div>
                 <p className={styles.skillCardText}>
-                  Interesse crescente em IA e machine learning, explorando aplicações práticas e inovadoras.
+                  Uso de Machine Learning e processamento de sinais para identificar padrões de risco.
                 </p>
               </div>
 
               <div className={styles.skillCard}>
                 <div className={styles.skillCardHeader}>
                   <Shield className={styles.skillCardIcon} />
-                  <h3 className={styles.skillCardTitle}>Blockchain & Segurança</h3>
+                  <h3 className={styles.skillCardTitle}>Segurança de Sistemas</h3>
                 </div>
                 <p className={styles.skillCardText}>
-                  Estudando blockchain e cibersegurança para construir soluções mais seguras e descentralizadas.
+                  Desenvolvimento de arquiteturas robustas para garantir a integridade de dados e a continuidade de serviços em sistemas de missão crítica.
                 </p>
               </div>
             </div>
@@ -284,9 +290,9 @@ export default function App() {
                 tech: ["React", "Node.js", "MongoDB"]
               },
               {
-                title: "Dashboard Analytics",
-                description: "Sistema de análise de dados com visualizações interativas e relatórios em tempo real.",
-                tech: ["Vue.js", "Python", "PostgreSQL"]
+                title: "Sistema Blockchain",
+                description: "Smart contract para votação descentralizada com interface web intuitiva.",
+                tech: ["Solidity", "Web3.js", "Next.js"]
               },
               {
                 title: "App Mobile",
@@ -294,19 +300,19 @@ export default function App() {
                 tech: ["React Native", "Firebase", "TypeScript"]
               },
               {
-                title: "Sistema Blockchain",
-                description: "Smart contract para votação descentralizada com interface web intuitiva.",
-                tech: ["Solidity", "Web3.js", "Next.js"]
+                title: "VisionSafe AI",
+                description: "Modelo de visão computacional treinado para identificar a proximidade de risco entre máquinas pesadas (guindastes e escavadeiras) e redes elétricas em imagens de canteiros de obra.",
+                tech: ["Python", "OpenCV", "TensorFlow"]
               },
               {
-                title: "DealFlow AI",
-                description: "Sistema de monitoramento que busca ofertas em Marketplaces e gera links de afiliados automaticamente em planilhas.",
-                tech: ["Python", "TensorFlow", "FastAPI"]
+                title: "SafeGrid IoT Monitor",
+                description: "Protótipo de sistema sensorial para detecção de inclinação e vibrações anômalas em estruturas de utilidade pública, com alertas automáticos via protocolo MQTT.",
+                tech: ["C++", "MQTT", "Node.js"]
               },
               {
-                title: "Security Scanner",
-                description: "Ferramenta de análise de segurança para identificar vulnerabilidades em aplicações web.",
-                tech: ["Python", "Docker", "React"]
+                title: "Infrastructure OpsCenter",
+                description: "Plataforma distribuída para reporte geolocalizado de incidentes de infraestrutura, com arquitetura resiliente projetada para operar com baixa latência em situações críticas.",
+                tech: ["Go", "React", "PostgreSQL"]
               } 
             ].map((project, index) => (
               <div
