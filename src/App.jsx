@@ -2,27 +2,46 @@ import React, { useState, useEffect } from 'react';
 import { Mail, Github, Linkedin, ChevronDown, Menu, X, Code, Brain, Shield, ExternalLink } from 'lucide-react';
 import styles from './Portfolio.module.css';
 
-const techRow1 = ['JavaScript', 'TypeScript', 'C++', 'React', 'React Native', 'Node.js', 'Next.js', 'Firebase'];
-const techRow2 = ['PyTorch', 'Pandas', 'Scikit-learn', 'Streamlit', 'AWS', 'FastAPI', 'Tailwind'];
 
 function TechStackMarquee() {
-  const allTechs = [...techRow1, ...techRow2]; // Unindo as listas para uma esteira única ou use separado
+  // Linha 1: Focada em Web e Software
+  const techRow1 = ['JavaScript', 'TypeScript', 'React', 'Node.js', 'Next.js', 'Firebase', 'C++', 'Tailwind CSS', 'Docker'];
+  // Linha 2: Focada em IA, IoT e Dados (Projeto Energisa)
+  const techRow2 = ['Python', 'PyTorch', 'TensorFlow', 'IoT', 'DAS Systems', 'Machine Learning', 'FastAPI', 'AWS', 'Pandas'];
 
   return (
     <section className={styles.techSection}>
-      <h2 className={styles.sectionTitle} style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        Tech <span className={styles.highlightTextInline}>Stack</span>
-      </h2>
+      <div className={styles.navContainer}>
+        <h2 className={styles.sectionTitle} style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          Tech <span className={styles.highlightTextInline}>Stack</span>
+        </h2>
+      </div>
 
-      <div className={styles.marquee}>
-        <div className={styles.marqueeInner}>
-          {/* Mapeamos a lista duas vezes para o efeito de loop infinito ser perfeito */}
-          {[...allTechs, ...allTechs].map((item, i) => (
-            <div key={i} className={styles.marqueeItem}>
-              {item}
-            </div>
-          ))}
+      {/* Container com máscara de degradê nas bordas */}
+      <div className={styles.marqueeContainer}>
+        
+        {/* Esteira 1: Esquerda para Direita */}
+        <div className={styles.marquee}>
+          <div className={styles.marqueeInner}>
+            {[...techRow1, ...techRow1].map((item, i) => (
+              <div key={i} className={styles.marqueeItem}>
+                <span className={styles.techDot}></span> {item}
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Esteira 2: Direita para Esquerda (Reverse) */}
+        <div className={styles.marquee}>
+          <div className={`${styles.marqueeInner} ${styles.marqueeReverse}`}>
+            {[...techRow2, ...techRow2].map((item, i) => (
+              <div key={i} className={styles.marqueeItem}>
+                <span className={styles.techDot}></span> {item}
+              </div>
+            ))}
+          </div>
+        </div>
+        
       </div>
     </section>
   );

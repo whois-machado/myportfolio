@@ -696,48 +696,90 @@
   color: #9ca3af; /* text-gray-400 */
 }
 
-/* Container principal da esteira */
-.marquee {
-  width: 100%;
-  overflow: hidden; /* Esconde o que sai da tela */
-  padding: 2rem 0;
-  background: rgba(10, 10, 15, 0.5); /* Fundo sutil */
-  display: flex;
+/* --- Seção Tech Stack Profissional --- */
+
+.techSection {
+  padding: 6rem 0;
+  background-color: #030712;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* O conteúdo que vai deslizar */
+/* Cria o efeito de "sumir" nas pontas */
+.marqueeContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: hidden;
+  /* Máscara gradiente para as bordas */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.marquee {
+  display: flex;
+  user-select: none;
+  gap: 2rem;
+}
+
 .marqueeInner {
   display: flex;
-  width: max-content;
-  animation: scroll 30s linear infinite; /* Animação infinita */
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  min-width: 100%;
+  animation: scrollLeft 30s linear infinite;
 }
 
-/* Cada item da esteira */
+/* Segunda linha indo para o lado oposto */
+.marqueeReverse {
+  animation: scrollRight 30s linear infinite;
+}
+
 .marqueeItem {
-  padding: 0 2rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #94a3b8; /* Cor cinza azulada */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background-color: rgba(31, 41, 55, 0.5); /* Fundo sutil para cada item */
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(59, 130, 246, 0.1);
   white-space: nowrap;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .marqueeItem:hover {
-  color: #3b82f6; /* Destaca ao passar o mouse */
+  color: #3b82f6;
+  border-color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
 }
 
-/* A animação de movimento */
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%); /* Move metade da largura (por isso duplicamos a lista) */
-  }
+.techDot {
+  width: 8px;
+  height: 8px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #3b82f6;
 }
 
-/* Ajuste para a seção */
-.techSection {
-  padding: 4rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* Animações */
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/* Pausar ao passar o mouse para facilitar a leitura */
+.marqueeContainer:hover .marqueeInner {
+  animation-play-state: paused;
 }
