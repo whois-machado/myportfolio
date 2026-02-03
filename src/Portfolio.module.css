@@ -695,3 +695,49 @@
   text-align: center;
   color: #9ca3af; /* text-gray-400 */
 }
+
+/* Container principal da esteira */
+.marquee {
+  width: 100%;
+  overflow: hidden; /* Esconde o que sai da tela */
+  padding: 2rem 0;
+  background: rgba(10, 10, 15, 0.5); /* Fundo sutil */
+  display: flex;
+}
+
+/* O conteúdo que vai deslizar */
+.marqueeInner {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite; /* Animação infinita */
+}
+
+/* Cada item da esteira */
+.marqueeItem {
+  padding: 0 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #94a3b8; /* Cor cinza azulada */
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.marqueeItem:hover {
+  color: #3b82f6; /* Destaca ao passar o mouse */
+}
+
+/* A animação de movimento */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* Move metade da largura (por isso duplicamos a lista) */
+  }
+}
+
+/* Ajuste para a seção */
+.techSection {
+  padding: 4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

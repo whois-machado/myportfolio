@@ -6,25 +6,20 @@ const techRow1 = ['JavaScript', 'TypeScript', 'C++', 'React', 'React Native', 'N
 const techRow2 = ['PyTorch', 'Pandas', 'Scikit-learn', 'Streamlit', 'AWS', 'FastAPI', 'Tailwind'];
 
 function TechStackMarquee() {
+  const allTechs = [...techRow1, ...techRow2]; // Unindo as listas para uma esteira única ou use separado
+
   return (
-    <section className="tech-section">
-      <h2 className="tech-title">Tech Stack</h2>
+    <section className={styles.techSection}>
+      <h2 className={styles.sectionTitle} style={{ textAlign: 'center', marginBottom: '2rem' }}>
+        Tech <span className={styles.highlightTextInline}>Stack</span>
+      </h2>
 
-      <div className="marquee">
-        <div className="marquee__inner marquee__inner--left">
-          {[...techRow1, ...techRow1].map((item, i) => (
-            <div key={item + i} className="marquee__item">
-              <span>{item}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="marquee marquee--reverse">
-        <div className="marquee__inner marquee__inner--right">
-          {[...techRow2, ...techRow2].map((item, i) => (
-            <div key={item + i} className="marquee__item">
-              <span>{item}</span>
+      <div className={styles.marquee}>
+        <div className={styles.marqueeInner}>
+          {/* Mapeamos a lista duas vezes para o efeito de loop infinito ser perfeito */}
+          {[...allTechs, ...allTechs].map((item, i) => (
+            <div key={i} className={styles.marqueeItem}>
+              {item}
             </div>
           ))}
         </div>
