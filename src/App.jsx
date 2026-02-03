@@ -5,9 +5,9 @@ import styles from './Portfolio.module.css';
 
 function TechStackMarquee() {
   // Linha 1: Focada em Web e Software
-  const techRow1 = ['JavaScript', 'TypeScript', 'Node.js', 'Next.js', 'C++', 'Tailwind CSS', 'Docker'];
+  const techRow1 = ['JavaScript', 'TypeScript', 'Node.js', 'C++', 'Tailwind CSS', 'Docker'];
   // Linha 2: Focada em IA, IoT e Dados (Projeto Energisa)
-  const techRow2 = ['Python', 'TensorFlow', 'IoT', 'Machine Learning', 'FastAPI', 'AWS', 'Pandas'];
+  const techRow2 = ['Python', 'TensorFlow', 'IoT', 'Machine Learning', 'FastAPI', 'AWS'];
 
   return (
     <section className={styles.techSection}>
