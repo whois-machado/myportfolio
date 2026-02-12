@@ -260,6 +260,10 @@
   border-radius: 0.75rem;
   padding: 1.5rem;
   transition: all 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .projectCard:hover {
   background-color: #374151; /* hover:bg-gray-750 */
@@ -438,15 +442,18 @@
 .projectActions {
   display: flex;
   gap: 0.75rem;
-  margin-top: auto; /* Empurra os botões para a base do card */
+  margin-top: auto; 
+  justify-content:center;/* Empurra os botões para a base do card */
 }
 
 .projectButton {
-  flex: 1;
+  width: fit-content;
+  min-width: 140px;
+  padding: 0.5rem 1.25rem;
+
   border: 1px solid #4b5563;
   color: #d1d5db;
   background-color: transparent;
-  padding: 0.5rem 0.75rem;
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.875rem;
@@ -605,35 +612,54 @@
 /* --- Estilos da Seção Contato --- */
 
 .contactContainer {
-  max-width: 56rem; /* max-w-4xl */
+  /* Aumentado de 56rem para 1200px para acomodar os 4 cards lado a lado */
+  max-width: 1200px; 
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   text-align: center;
 }
 
 .contactInfoBox {
-  background-color: #1f2937; /* bg-gray-800 */
-  border-radius: 1rem; /* rounded-2xl */
-  padding: 2rem; /* p-8 */
-  margin-bottom: 3rem; /* mb-12 */
+  background-color: #1f2937; /* Mantém o padrão do site */
+  border-radius: 1rem;
+  padding: 3rem 2rem; /* Aumentei levemente o padding vertical */
+  margin-bottom: 3rem;
+  /* Dica: Use uma borda fina para remeter ao seu LinkedIn */
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .contactInfoGrid {
-  display: grid;
-  gap: 2rem; /* gap-8 */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px; /* Espaço entre os cards */
+  width: 100%;
+  flex-wrap: nowrap; /* Impede a quebra de linha em telas de desktop */
+}
+
+/* Ajuste responsivo para celulares */
+@media (max-width: 900px) {
+  .contactInfoGrid {
+    flex-wrap: wrap; /* No celular ele volta a quebrar para não espremer */
+  }
 }
 
 .contactCard {
+  flex: 1;
+  min-width: 200px; /* Reduzi levemente o mínimo para garantir o encaixe */
+  max-width: 280px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem; /* p-6 */
-  background-color: #374151; /* bg-gray-700 */
-  border-radius: 0.75rem; /* rounded-xl */
-  text-decoration: none;
-  transition: all 0.3s;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.02); /* Leve fundo para destacar do box */
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  border-radius: 12px;
+  padding: 32px 20px;
+  transition: all 0.3s ease;
 }
 .contactCard:hover {
   background-color: #4b5563; /* hover:bg-gray-600 */
@@ -714,62 +740,61 @@
   padding: 6rem 0;
   background-color: #030712;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden; /* Garante que nada saia da seção principal */
 }
 
-/* Cria o efeito de "sumir" nas pontas */
 .marqueeContainer {
-  position: relative;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  overflow: hidden;
-  /* Máscara gradiente para as bordas */
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  gap: 2rem;
+  position: relative;
+  /* A máscara esconde as bordas para o efeito de fade */
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .marquee {
   display: flex;
-  user-select: none;
-  gap: 2rem;
+  width: 100%;
+  overflow: visible; /* Essencial para o hover não cortar o item */
 }
 
 .marqueeInner {
   display: flex;
-  flex-shrink: 0;
   align-items: center;
-  justify-content: space-around;
   gap: 2rem;
-  min-width: 100%;
-  animation: scrollLeft 30s linear infinite;
+  width: max-content;
+  animation: scrollLeft 40s linear infinite;
+  padding: 10px 0; /* Respiro para o efeito de flutuar (translateY) no hover */
 }
 
-/* Segunda linha indo para o lado oposto */
 .marqueeReverse {
-  animation: scrollRight 30s linear infinite;
+  animation: scrollRight 40s linear infinite;
 }
 
 .marqueeItem {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: #94a3b8;
-  background-color: rgba(31, 41, 55, 0.5); /* Fundo sutil para cada item */
+  background-color: rgba(31, 41, 55, 0.5); 
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   border: 1px solid rgba(59, 130, 246, 0.1);
   white-space: nowrap;
   transition: all 0.3s ease;
+  cursor: default;
 }
 
 .marqueeItem:hover {
   color: #3b82f6;
   border-color: #3b82f6;
   background-color: rgba(59, 130, 246, 0.1);
-  transform: translateY(-2px);
+  transform: translateY(-5px); /* Flutua sem ser cortado agora */
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+  z-index: 10; /* Garante que fique acima dos outros itens no hover */
 }
 
 .techDot {
@@ -780,18 +805,13 @@
   box-shadow: 0 0 10px #3b82f6;
 }
 
-/* Animações */
+/* Animações ajustadas para repetição tripla (-33.33%) */
 @keyframes scrollLeft {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-33.333%); }
 }
 
 @keyframes scrollRight {
-  from { transform: translateX(-50%); }
+  from { transform: translateX(-33.333%); }
   to { transform: translateX(0); }
-}
-
-/* Pausar ao passar o mouse para facilitar a leitura */
-.marqueeContainer:hover .marqueeInner {
-  animation-play-state: paused;
 }

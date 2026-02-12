@@ -1,13 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Github, Linkedin, ChevronDown, Menu, X, Code, Brain, Shield, ExternalLink } from 'lucide-react';
+import { Mail, Github, Linkedin, BookOpen, ChevronDown, Menu, X, Server, Code, Network, ShieldCheck, ExternalLink } from 'lucide-react';
 import styles from './Portfolio.module.css';
 
 
 function TechStackMarquee() {
-  // Linha 1: Focada em Web e Software
-  const techRow1 = ['JavaScript', 'TypeScript', 'Node.js', 'C++', 'Tailwind CSS', 'Docker'];
-  // Linha 2: Focada em IA, IoT e Dados (Projeto Energisa)
-  const techRow2 = ['Python', 'TensorFlow', 'IoT', 'Machine Learning', 'FastAPI', 'AWS'];
+  const techRow1 = ['Java', 'Spring Boot', 'REST APIs', 'JUnit 5', 'Docker'];
+  const techRow2 = ['JavaScript', 'Next.js', 'TypeScript', 'Node.js'];
+  const techRow3 = ['SOLID', 'Clean Code', 'Software Design'];
+  const techRow4 = ['Python', 'Machine Learning', 'NetworkX', 'ETL (Pandas)', 'AWS'];
+
+  // Função para renderizar a esteira com repetição tripla para evitar buracos
+  const renderMarquee = (items, reverse = false) => (
+    <div className={styles.marquee}>
+      <div className={`${styles.marqueeInner} ${reverse ? styles.marqueeReverse : ''}`}>
+        {/* Triplicamos os itens para garantir preenchimento total em qualquer resolução */}
+        {[...items, ...items, ...items].map((item, i) => (
+          <div key={i} className={styles.marqueeItem}>
+            <span className={styles.techDot}></span> {item}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <section className={styles.techSection}>
@@ -17,31 +31,11 @@ function TechStackMarquee() {
         </h2>
       </div>
 
-      {/* Container com máscara de degradê nas bordas */}
       <div className={styles.marqueeContainer}>
-        
-        {/* Esteira 1: Esquerda para Direita */}
-        <div className={styles.marquee}>
-          <div className={styles.marqueeInner}>
-            {[...techRow1, ...techRow1].map((item, i) => (
-              <div key={i} className={styles.marqueeItem}>
-                <span className={styles.techDot}></span> {item}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Esteira 2: Direita para Esquerda (Reverse) */}
-        <div className={styles.marquee}>
-          <div className={`${styles.marqueeInner} ${styles.marqueeReverse}`}>
-            {[...techRow2, ...techRow2].map((item, i) => (
-              <div key={i} className={styles.marqueeItem}>
-                <span className={styles.techDot}></span> {item}
-              </div>
-            ))}
-          </div>
-        </div>
-        
+        {renderMarquee(techRow1)}
+        {renderMarquee(techRow2, true)}
+        {renderMarquee(techRow3)}
+        {renderMarquee(techRow4, true)}
       </div>
     </section>
   );
@@ -184,8 +178,8 @@ export default function App() {
             
             <p className={styles.heroSubtitle}>
               <p className={styles.heroSubtitle}>
-                Estudante de Ciência da Computação pela UFRRJ, focado em desenvolver soluções de software para <strong>infraestruturas críticas</strong>. Especialista em unir <strong>IA e IoT</strong> para promover a <strong>segurança e a preservação da vida</strong> em ambientes de risco.
-</p>
+                Computer Science Student - UFRRJ | Software Engineer | Backend Java & Spring | REST APIs
+              </p>
             </p>
 
             <div className={styles.heroActions}>
@@ -221,46 +215,42 @@ export default function App() {
           <div className={styles.aboutContentGrid}>
             <div className={styles.textContainer}>
               <p className={styles.paragraph}>
-                Sou graduando em <strong className={styles.highlightText}>Ciência da Computação</strong> pela UFRRJ, 
-                com foco em transformar tecnologia em <strong>segurança e preservação da vida</strong>. 
-                Desenvolvo sistemas que unem software de alta performance a infraestruturas críticas.
+                Atualmente no <strong>5º período de Ciência da Computação na UFRRJ</strong>, minha trajetória une o rigor acadêmico à engenharia pragmática. Atuo como pesquisador de <strong>Iniciação Científica em Teoria dos Grafos</strong> aplicada a redes sociais e foco meu desenvolvimento técnico no <strong>Ledgerflow</strong>, um ecossistema de Core Banking focado em resiliência e alta performance em Java.
               </p>
               
               <p className={styles.paragraph}>
-                Atuo na intersecção entre hardware e software, colaborando em equipes multidisciplinares 
-                para criar ferramentas que detectam riscos e previnem acidentes com a rede elétrica em tempo real, 
-                priorizando a <strong>viabilidade técnica e a escalabilidade</strong>.
+                Complemento minha visão de dados com uma especialização em <strong>Data Science e IA pela Oracle/Alura (ONE)</strong>, expandindo agora minha expertise para <strong>Oracle Cloud Infrastructure (OCI) e Relational DataBases</strong> para construir arquiteturas backend completas, escaláveis e seguras.
               </p>
             </div>
 
             <div className={styles.skillsGrid}>
               <div className={styles.skillCard}>
                 <div className={styles.skillCardHeader}>
-                  <Code className={styles.skillCardIcon} />
-                  <h3 className={styles.skillCardTitle}>IoT & Monitoramento</h3>
+                  <Network className={styles.skillCardIcon} />
+                  <h3 className={styles.skillCardTitle}>Ciência & Algoritmos</h3>
                 </div>
                 <p className={styles.skillCardText}>
-                  Criação de dashboards inteligentes e integração de sensores (como DAS) para visualização de dados críticos da rede elétrica em tempo real.
+                  Otimização algorítmica baseada em Teoria dos Grafos para a resolução de problemas complexos, priorizando a eficiência técnica e a economia de recursos sistêmicos.
                 </p>
               </div>
 
               <div className={styles.skillCard}>
                 <div className={styles.skillCardHeader}>
-                  <Brain className={styles.skillCardIcon} />
-                  <h3 className={styles.skillCardTitle}>IA Preventiva</h3>
+                  <Server className={styles.skillCardIcon} />
+                  <h3 className={styles.skillCardTitle}>Ecossistema Backend</h3>
                 </div>
                 <p className={styles.skillCardText}>
-                  Uso de Machine Learning e processamento de sinais para identificar padrões de risco.
+                  Especialista em Backend Java & Spring, com foco em APIs RESTful, persistência de dados e arquitetura limpa.
                 </p>
               </div>
 
               <div className={styles.skillCard}>
                 <div className={styles.skillCardHeader}>
-                  <Shield className={styles.skillCardIcon} />
-                  <h3 className={styles.skillCardTitle}>Segurança de Sistemas</h3>
+                  <ShieldCheck className={styles.skillCardIcon} />
+                  <h3 className={styles.skillCardTitle}>Qualidade e Resiliência</h3>
                 </div>
                 <p className={styles.skillCardText}>
-                  Desenvolvimento de arquiteturas robustas para garantir a integridade de dados e a continuidade de serviços em sistemas de missão crítica.
+                  Comprometido com a excelência técnica através de SOLID, Clean Code e testes automatizados com JUnit 5 para sistemas críticos.
                 </p>
               </div>
             </div>
@@ -277,7 +267,7 @@ export default function App() {
             </h2>
             <div className={styles.titleUnderline}></div>
             <p className={styles.sectionSubtitle}>
-              Projetos que estou começando a desenvolver, executando minhas habilidades e paixão por tecnologia.
+              Projetos que estou desenvolvendo, aplicando minhas habilidades e conhecimentos por tecnologia.
             </p>
           </div>
 
@@ -285,35 +275,22 @@ export default function App() {
             {/* Project Card Template */}
             {[
               {
-                title: "E-commerce Moderno",
-                description: "Plataforma completa de e-commerce com React, Node.js e payment gateway integrado.",
-                tech: ["React", "Node.js", "MongoDB"]
+                title: "LedgerFlow",
+                description: "Sistema de Core Banking focado em resiliência e alta performance transacional.",
+                tech: ["Java", "Spring Boot", "MySQL", "JUnit 5"],
+                githubUrl: "https://github.com/whois-machado/LedgerFlow"
               },
               {
-                title: "Sistema Blockchain",
-                description: "Smart contract para votação descentralizada com interface web intuitiva.",
-                tech: ["Solidity", "Web3.js", "Next.js"]
+                title: "UrbanStore",
+                description: "Plataforma completa de e-commerce com payment gateway integrado.",
+                tech: ["Next.js", "Node.js", "TypeScript"]
               },
               {
-                title: "App Mobile",
-                description: "Aplicativo mobile híbrido para gestão de tarefas com sincronização em tempo real.",
-                tech: ["React Native", "Firebase", "TypeScript"]
+                title: "UniHub",
+                description: "Plataforma colaborativa acadêmica com sistema de recomendação inteligente.",
+                tech: ["Python", "NextworkX", "Machine Learning"]
               },
-              {
-                title: "VisionSafe AI",
-                description: "Modelo de visão computacional treinado para identificar a proximidade de risco entre máquinas pesadas (guindastes e escavadeiras) e redes elétricas em imagens de canteiros de obra.",
-                tech: ["Python", "OpenCV", "TensorFlow"]
-              },
-              {
-                title: "SafeGrid IoT Monitor",
-                description: "Protótipo de sistema sensorial para detecção de inclinação e vibrações anômalas em estruturas de utilidade pública, com alertas automáticos via protocolo MQTT.",
-                tech: ["C++", "MQTT", "Node.js"]
-              },
-              {
-                title: "Infrastructure OpsCenter",
-                description: "Plataforma distribuída para reporte geolocalizado de incidentes de infraestrutura, com arquitetura resiliente projetada para operar com baixa latência em situações críticas.",
-                tech: ["Go", "React", "PostgreSQL"]
-              } 
+    
             ].map((project, index) => (
               <div
                 key={index}
@@ -331,6 +308,7 @@ export default function App() {
                   {project.description}
                 </p>
                 
+                <div className={styles.cardFooter}>
                 <div className={styles.projectTechTagsContainer}>
                   {project.tech.map((tech, techIndex) => (
                     <span
@@ -339,15 +317,15 @@ export default function App() {
                     </span>
                   ))}
                 </div>
+                </div>
                 
                 <div className={styles.projectActions}>
-                  <button className={styles.projectButton}>
-                    <ExternalLink className={styles.buttonIcon}/>
-                    <span>Demo</span>
-                  </button>
-                  <button className={styles.projectButton}>
+                  <button 
+                    className={styles.projectButton}
+                    onClick={() => project.githubUrl !== "#" && window.open(project.githubUrl, "_blank")}
+                  >
                     <Github className={styles.buttonIcon}/>
-                    Código
+                    Repositório
                   </button>
                 </div>
               </div>
@@ -400,6 +378,14 @@ export default function App() {
                 </div>
                 <h3 className={styles.contactCardTitle}>Linkedin</h3>
                 <p className={styles.contactCardText}>/in/gabrielmachadodecarvalho  </p>
+              </a>
+
+              <a href="https://dev.to/whoismachado" target="_blank" rel="noopener noreferrer" className={styles.contactCard}>
+                <div className={styles.contactCardIconWrapper} style={{backgroundColor: '#000000'}}>
+                  <BookOpen className={styles.contactCardIcon} />
+                </div>
+                <h3 className={styles.contactCardTitle}>Dev.to</h3>
+                <p className={styles.contactCardText}>Artigos Técnicos</p>
               </a>
             </div>
           </div>
