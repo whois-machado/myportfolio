@@ -27,13 +27,6 @@ public/ → arquivos estáticos (imagens, favicon, etc.)
 
 ---
 
-## 📸 Preview
-
-Página de Início:
-
-![Preview do Portfólio](./public/printscreen.jpg)  
-
----
 
 ## 📬 Contato
 
