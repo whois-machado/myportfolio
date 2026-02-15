@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, Github, Linkedin, BookOpen, ChevronDown, Menu, X, Server, Code, Network, ShieldCheck, ExternalLink } from 'lucide-react';
+import React, { useState, useEffect } from 'react'; 
+import { Mail, Github, Linkedin, BookOpen, ChevronDown, Menu, X, LayoutDashboard, Code, Layers, ChartBar, ExternalLink } from 'lucide-react';
 import styles from './Portfolio.module.css';
+import { useTranslation } from 'react-i18next';
+
 
 
 function TechStackMarquee() {
@@ -42,8 +44,13 @@ function TechStackMarquee() {
 }
 
 export default function App() {
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
+  const toggleLanguage = () => {
+  const newLang = i18n.language === 'en' ? 'pt' : 'en';
+  i18n.changeLanguage(newLang);
+};
 
   // Smooth scroll function
   const scrollToSection = (sectionId) => {
@@ -98,10 +105,10 @@ export default function App() {
             <div className={styles.desktopNav}>
               <div className={styles.desktopNavLinks}>
                 {[
-                  { id: 'inicio', label: 'Início' },
-                  { id: 'sobre', label: 'Sobre' },
-                  { id: 'portfolio', label: 'Portfólio' },
-                  { id: 'contato', label: 'Contato' }
+                  { id: 'inicio', label: t('nav.home') },
+                  { id: 'sobre', label: t('nav.about') },
+                  { id: 'portfolio', label: t('nav.projects') },
+                  { id: 'contato', label: t('nav.contact') }
                 ].map(({ id, label }) => (
                   <button
                     key={id}
@@ -111,6 +118,13 @@ export default function App() {
                     {label}
                   </button>
                 ))}
+                <button 
+                  onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'pt' : 'en')}
+                  className={styles.navButton}
+                  style={{ marginLeft: '1rem', fontWeight: 'bold', color: '#3b82f6' }}
+                >
+                  {i18n.language === 'en' ? 'PT' : 'EN'}
+                </button>
               </div>
             </div>
 
@@ -170,16 +184,14 @@ export default function App() {
 
           <div className={styles.fadeInUpDelay1}>
             <h1 className={styles.mainTitle}>
-              Software
+              {t('hero.title')}
               <span className={styles.highlightText}>
-                Engineer
+                {t('hero.highlight')}
               </span>
             </h1>
             
             <p className={styles.heroSubtitle}>
-              <p className={styles.heroSubtitle}>
-                Computer Science Student - UFRRJ | Software Engineer | Backend Java & Spring | REST APIs
-              </p>
+              {t('hero.subtitle')}
             </p>
 
             <div className={styles.heroActions}>
@@ -187,7 +199,7 @@ export default function App() {
                 onClick={() => scrollToSection('sobre')}
                 className={styles.primaryButton}
               >
-                Conheça meu trabalho
+               {t('hero.btnWork')}
               </button>
               
               <button
@@ -195,7 +207,7 @@ export default function App() {
                 variant="outline"
                 className={styles.secondaryButton}
               >
-                Entre em contato
+                {t('hero.btnContact')}
               </button>
             </div>
           </div>
@@ -207,7 +219,10 @@ export default function App() {
         <div className={styles.navContainer}>
           <div className={styles.sectionTitleContainer}>
             <h2 className={styles.sectionTitle}>
-              Sobre <span className={styles.highlightTextInline}>Mim</span> {/* caso de erro, mude para styles.textBlue, e adicione .textBlue no .module.css*/}
+              {t('about.title')}  
+              <span className={styles.highlightTextInline}> 
+                {t('about.highlight')}
+              </span> 
             </h2>
             <div className={styles.titleUnderline}></div>
           </div>
@@ -215,42 +230,48 @@ export default function App() {
           <div className={styles.aboutContentGrid}>
             <div className={styles.textContainer}>
               <p className={styles.paragraph}>
-                Atualmente no <strong>5º período de Ciência da Computação na UFRRJ</strong>, minha trajetória une o rigor acadêmico à engenharia pragmática. Atuo como pesquisador de <strong>Iniciação Científica em Teoria dos Grafos</strong> aplicada a redes sociais e foco meu desenvolvimento técnico no <strong>Ledgerflow</strong>, um ecossistema de Core Banking focado em resiliência e alta performance em Java.
+                {t('about.p1')}
               </p>
               
               <p className={styles.paragraph}>
-                Complemento minha visão de dados com uma especialização em <strong>Data Science e IA pela Oracle/Alura (ONE)</strong>, expandindo agora minha expertise para <strong>Oracle Cloud Infrastructure (OCI) e Relational DataBases</strong> para construir arquiteturas backend completas, escaláveis e seguras.
+                {t('about.p2')}
               </p>
             </div>
 
             <div className={styles.skillsGrid}>
               <div className={styles.skillCard}>
                 <div className={styles.skillCardHeader}>
-                  <Network className={styles.skillCardIcon} />
-                  <h3 className={styles.skillCardTitle}>Ciência & Algoritmos</h3>
+                  <Layers className={styles.skillCardIcon} />
+                  <h3 className={styles.skillCardTitle}>
+                    {t('about.cardTitle1')}
+                  </h3>
                 </div>
                 <p className={styles.skillCardText}>
-                  Otimização algorítmica baseada em Teoria dos Grafos para a resolução de problemas complexos, priorizando a eficiência técnica e a economia de recursos sistêmicos.
+                  {t('about.pCard1')}
                 </p>
               </div>
 
               <div className={styles.skillCard}>
                 <div className={styles.skillCardHeader}>
-                  <Server className={styles.skillCardIcon} />
-                  <h3 className={styles.skillCardTitle}>Ecossistema Backend</h3>
+                  <LayoutDashboard className={styles.skillCardIcon} />
+                  <h3 className={styles.skillCardTitle}>
+                    {t('about.cardTitle2')}
+                  </h3>
                 </div>
                 <p className={styles.skillCardText}>
-                  Especialista em Backend Java & Spring, com foco em APIs RESTful, persistência de dados e arquitetura limpa.
+                  {t('about.pCard2')}
                 </p>
               </div>
 
               <div className={styles.skillCard}>
                 <div className={styles.skillCardHeader}>
-                  <ShieldCheck className={styles.skillCardIcon} />
-                  <h3 className={styles.skillCardTitle}>Qualidade e Resiliência</h3>
+                  <ChartBar className={styles.skillCardIcon} />
+                  <h3 className={styles.skillCardTitle}>
+                    {t('about.cardTitle3')}
+                  </h3>
                 </div>
                 <p className={styles.skillCardText}>
-                  Comprometido com a excelência técnica através de SOLID, Clean Code e testes automatizados com JUnit 5 para sistemas críticos.
+                  {t('about.pCard3')}
                 </p>
               </div>
             </div>
@@ -263,32 +284,34 @@ export default function App() {
         <div className={styles.navContainer}>
           <div className={styles.sectionTitleContainer}>
             <h2 className={styles.sectionTitle}>
-              Meu <span className={styles.highlightTextInline}>Portfólio</span>
+              {t('projects.title')} 
+              <span className={styles.highlightTextInline}>
+                {t('projects.highlight')}
+              </span>
             </h2>
             <div className={styles.titleUnderline}></div>
             <p className={styles.sectionSubtitle}>
-              Projetos que estou desenvolvendo, aplicando minhas habilidades e conhecimentos por tecnologia.
+              {t('projects.subtitle')}
             </p>
           </div>
 
           <div className={styles.projectsGrid}>
-            {/* Project Card Template */}
             {[
               {
                 title: "LedgerFlow",
-                description: "Sistema de Core Banking focado em resiliência e alta performance transacional.",
+                description: t('projects.ledgerflow.description'),
                 tech: ["Java", "Spring Boot", "MySQL", "JUnit 5"],
                 githubUrl: "https://github.com/whois-machado/LedgerFlow"
               },
               {
                 title: "UrbanStore",
-                description: "Plataforma completa de e-commerce com payment gateway integrado.",
+                description: t('projects.urbanstore.description'),
                 tech: ["Next.js", "Node.js", "TypeScript"]
               },
               {
                 title: "UniHub",
-                description: "Plataforma colaborativa acadêmica com sistema de recomendação inteligente.",
-                tech: ["Python", "NextworkX", "Machine Learning"]
+                description: t('projects.unihub.description'),
+                tech: ["Python", "NetworkX", "Machine Learning"]
               },
     
             ].map((project, index) => (
@@ -325,7 +348,7 @@ export default function App() {
                     onClick={() => project.githubUrl !== "#" && window.open(project.githubUrl, "_blank")}
                   >
                     <Github className={styles.buttonIcon}/>
-                    Repositório
+                    {t('projects.btnIcon')}
                   </button>
                 </div>
               </div>
@@ -341,12 +364,14 @@ export default function App() {
         <div className={styles.contactContainer}>
           <div className={styles.sectionTitleContainer}>
             <h2 className={styles.sectionTitle}>
-              Vamos <span className={styles.highlightTextInline}>Conversar</span>
+              {t('contacts.title')} 
+              <span className={styles.highlightTextInline}>
+                {t('contacts.highlight')}
+              </span>
             </h2>
             <div className={styles.titleUnderline}></div>
             <p className={styles.paragraph}>
-              Estou sempre aberto a novas oportunidades e colaborações interessantes. 
-              Entre em contato comigo!
+              {t('contacts.p')}
             </p>
           </div>
 
@@ -394,7 +419,7 @@ export default function App() {
             <button
               onClick={() => window.location.href = 'mailto:bielmachado09@hotmail.com'} className={styles.largePrimaryButton}
             >
-              Enviar E-mail
+              {t('contacts.btnContact')}
             </button>
           </div>
         </div>
@@ -404,7 +429,7 @@ export default function App() {
       <footer className={styles.footer}>
         <div className={styles.navContainer}>
           <p className={styles.footerText}>
-            © 2025 Gabriel Machado | React • CSS
+            © 2026 Gabriel Machado | React • CSS
           </p>
         </div>
       </footer>

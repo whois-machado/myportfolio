@@ -1,0 +1,52 @@
+{
+  "nav" : {
+    "home" : "Home",
+    "about" : "About",
+    "projects" : "Projects",
+    "contact" : "Contact"
+  },
+
+  "hero" : {
+    "title" : "Software",
+    "highlight" : "Engineer",
+    "subtitle" : "Computer Science Student - UFRRJ | Software Engineer | Backend Java & Spring | REST APIs",
+    "btnWork" : "View my Work",
+    "btnContact" : "Get in touch"
+  },
+
+  "about" : {
+    "title": "About", 
+    "highlight": " Me",
+    "p1": "Junior Computer Science student at UFRRJ with a strong focus on software engineering fundamentals such as system design, clean architecture, and maintainable code. I aim to build solutions that scale well and remain easy to understand and evolve over time.",
+    "p2": "I have hands-on experience designing backend systems, structuring codebases using architectural principles, and working with version control in collaborative environments. My academic background and undergraduate research strengthen my analytical thinking and ability to reason about complex systems.",
+    "cardTitle1" : "Backend engineering",
+    "cardTitle2" : "Frontend Development",
+    "cardTitle3" : "Data Science & AI",
+    "pCard1" : "Java & Spring Boot focused development, RESTful APIs, relational databases, clean architecture, and automated testing for scalable and maintainable systems.",
+    "pCard2" : "Building responsive and functional user interfaces with JavaScript/TypeScript and React, focused on usability and seamless integration with backend services.",
+    "pCard3" : "Data analysis and modeling with Python and Pandas, applying analytical thinking and foundational AI concepts to uncover insights, and support data-driven systems and decisions."
+  },
+
+  "projects" : {
+    "title" : "My",
+    "highlight" : " Projects",
+    "subtitle" : "Projects where I turn ideas into code, applying software engineering concepts and modern technologies.",
+    "ledgerflow" : {
+        "description" : "Core banking system focused on resilience and high-performance transaction processing."
+    },
+    "urbanstore" : {
+        "description" : "Full-stack e-commerce platform with an integrated payment gateway."
+    },
+    "unihub" : {
+        "description" : "Collaborative academic platform featuring an intelligent recommendation system."
+    },
+    "btnIcon" : "Repository"
+  },
+
+  "contacts" : {
+    "title" : "Let's",
+    "highlight" : " Talk",
+    "p" : "I'm always open to new opportunities and exciting collaborations. Let's connect!",
+    "btnContact" : "Send E-mail"
+  }
+}

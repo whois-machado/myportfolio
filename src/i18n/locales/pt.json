@@ -1,0 +1,52 @@
+{
+  "nav" : {
+    "home" : "Início",
+    "about" : "Sobre",
+    "projects" : "Projetos",
+    "contact" : "Contato"
+  },
+
+  "hero" : {
+    "title" : "Software",
+    "highlight" : "Engineer",
+    "subtitle" : "Computer Science Student - UFRRJ | Software Engineer | Backend Java & Spring | REST APIs",
+    "btnWork" : "Ver Projetos",
+    "btnContact" : "Entrar em contato"
+  },
+
+  "about": {
+    "title": "Sobre",
+    "highlight": " Mim",
+    "p1": "Estudante de Ciência da Computação no 5º período pela UFRRJ, com forte foco em fundamentos de engenharia de software, como design de sistemas, arquitetura limpa e código manutenível. Busco desenvolver soluções escaláveis, fáceis de entender e evoluir ao longo do tempo.",
+    "p2": "Possuo experiência prática no design de sistemas backend, organização de bases de código com princípios arquiteturais e uso de controle de versão em ambientes colaborativos. Minha formação acadêmica e atuação em pesquisa de iniciação científica fortalecem meu pensamento analítico e minha capacidade de lidar com sistemas complexos.",
+    "cardTitle1" : "Engenharia Backend",
+    "cardTitle2" : "Desenvolvimento Frontend",
+    "cardTitle3" : "Data Science & AI",
+    "pCard1": "Desenvolvimento focado em Java e Spring Boot, APIs RESTful, bancos de dados relacionais, arquitetura limpa e testes automatizados para sistemas escaláveis e manuteníveis.",
+    "pCard2": "Construção de interfaces responsivas e funcionais com JavaScript/TypeScript e React, com foco em usabilidade e integração eficiente com serviços backend.",
+    "pCard3": "Análise e modelagem de dados com Python e Pandas, aplicando raciocínio analítico e conceitos fundamentais de IA para extrair insights e apoiar sistemas e decisões orientadas por dados."
+  },
+
+  "projects": {
+    "title": "Meus",
+    "highlight": " Projetos",
+    "subtitle": "Projetos nos quais transformo ideias em código, aplicando conceitos de engenharia de software e tecnologias modernas.",
+    "ledgerflow": {
+      "description": "Sistema de core banking focado em resiliência e alto desempenho no processamento transacional."
+    },
+    "urbanstore": {
+      "description": "Plataforma de e-commerce full stack com gateway de pagamento integrado."
+    },
+    "unihub": {
+      "description": "Plataforma acadêmica colaborativa com sistema inteligente de recomendação."
+    },
+    "btnIcon": "Repositório"
+  },
+
+  "contacts": {
+    "title": "Vamos",
+    "highlight": " Conversar",
+    "p": "Estou sempre aberto a novas oportunidades e colaborações interessantes. Vamos nos conectar!",
+    "btnContact": "Enviar E-mail"
+  }
+}
